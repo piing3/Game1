@@ -1,21 +1,54 @@
 package game1;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import javax.swing.Timer;
+
 /**
- * Purpose: 
+ * Purpose: Resource entities (Tree, Stone)
  * @author Davin
  *
  */
-public class Resource extends Entity{
+abstract class Resource extends Entity{
 
-    //linked list
+    protected int maxSize;
+    protected int curSize;
+    protected int rechargeRate;
     
-    public Resource(int x, int y, int width, int height) {
-        super(x, y, width, height);
+    public static ArrayList<Resource> resources = new ArrayList<>();
+    
+    public Resource(int x, int y) {
+        super(x, y, 0, 0);
+        resources.add(this);
+        
+
+        
+        ActionListener al = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(curSize < maxSize){
+                    if(curSize + rechargeRate <= maxSize) curSize += rechargeRate;
+                    else curSize = maxSize;
+                }
+            }
+        };
+        Timer recharge = new Timer(100, al);
     }
+    
+    abstract void harvest(Player player); 
 
 
     //------Varibles-Methods------------
 
+    public void setMaxSize(int maxSize) {
+        this.maxSize = maxSize;
+        this.curSize = maxSize;
+    }
+
+    public void setRechargeRate(int rechargeRate) {
+        this.rechargeRate = rechargeRate;
+    }
 
 
     //-------Object-Methods------------- 

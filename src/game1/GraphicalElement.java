@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.event.KeyListener;
 import java.util.Objects;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
@@ -19,7 +20,7 @@ abstract class GraphicalElement{
     protected int z;
     protected int width;
     protected int height;
-    protected ImageIcon graphic;
+    private JLabel image;
     private JPanel element;
 
     /**
@@ -37,7 +38,6 @@ abstract class GraphicalElement{
         this.z = z;
         this.width = width;
         this.height = height;
-        this.graphic = null;
         
         element = new JPanel();
         element.setBounds(x, y, width, height);        
@@ -52,6 +52,15 @@ abstract class GraphicalElement{
         element.setBackground(color);
         redraw();
     }
+    
+    protected void setSize(int width, int height){
+        element.setSize(width, height);
+        redraw();
+    }
+    
+    protected void setGraphic(ImageIcon graphic){
+        image.setIcon(graphic);
+    } 
     
     protected void redraw(){
         baseFrame.remove(element);

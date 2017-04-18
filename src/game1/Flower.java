@@ -16,7 +16,7 @@ public class Flower extends Decoration{
     
     public Flower(int x, int y, int type) {
         super(x, y, 10, 20);
-        //if (type == TYPE_YELLOW) graphic = new ImageIcon("src\\graphics\\flower_yellow");
+        if (type == TYPE_YELLOW) setGraphic(new ImageIcon("src\\graphics\\flower_yellow"));
         //if (type == TYPE_YELLOW) graphic = new ImageIcon("src\\graphics\\flower_yellow");
         //if (type == TYPE_YELLOW) graphic = new ImageIcon("src\\graphics\\flower_yellow");
     }

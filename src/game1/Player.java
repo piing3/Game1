@@ -9,6 +9,11 @@ import java.awt.Color;
  */
 public class Player extends Actor{
 
+    private int wood;
+    private int stone;
+    //Tool tool;
+    
+    
     public Player(int x, int y) {
         super(x, y, 50, 50);
         setBackground(Color.yellow);
@@ -16,10 +21,29 @@ public class Player extends Actor{
 
     @Override
     void script() {
+        
     }
 
 
     //------Varibles-Methods------------
+
+    public void addWood(int add) {
+        this.wood += add;
+    }
+    public boolean removeWood(int remove) {
+        if(this.wood < remove) return false;
+        this.wood -= remove;
+        return true;
+    }
+    
+    public void addStone(int add) {
+        this.stone += add;
+    }
+    public boolean removeStone(int remove) {
+        if(this.stone < remove) return false;
+        this.stone -= remove;
+        return true;
+    }
 
 
 

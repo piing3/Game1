@@ -3,7 +3,7 @@ package game1;
 import java.util.ArrayList;
 
 /**
- * Purpose: Non-actor intractable elements (Rock, Tree, Etc)
+ * Purpose: Non-actor intractable elements (Tree, Wall, Etc)
  * @author Davin
  *
  */
