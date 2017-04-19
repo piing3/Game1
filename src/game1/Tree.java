@@ -1,8 +1,10 @@
 package game1;
 
+import javax.swing.ImageIcon;
+
 /**
- *
- * @author d.holmberg
+ * Purpose: Tree resource
+ * @author Davin
  */
 public class Tree extends Resource{
 
@@ -10,31 +12,32 @@ public class Tree extends Resource{
     public static final int TYPE_MID = 1; 
     public static final int TYPE_LARGE = 2;
     
+    
     public Tree(int x, int y, int type) {
         super(x, y);
         if (type == TYPE_SMALL) {
             setMaxSize(25);
             setRechargeRate(1);
             setSize(50, 100);
-            this.setGraphic("");
+            this.setGraphic(new ImageIcon("src\\graphics\\tree_small"));
         }
         if (type == TYPE_MID) {
             setMaxSize(25);
             setRechargeRate(1);
             setSize(75, 125);
-            this.setGraphic("");
+            this.setGraphic(new ImageIcon("src\\graphics\\tree_mid"));
         }
         if (type == TYPE_LARGE) {
             setMaxSize(25);
             setRechargeRate(1);
             setSize(100, 150);
-            this.setGraphic("");
+            this.setGraphic(new ImageIcon("src\\graphics\\tree_large"));
         }
     }
 
     @Override
     void harvest(Player player) {
-        
+        if (player.tool == Player.)
     }
 
 
@@ -45,7 +48,7 @@ public class Tree extends Resource{
     //----Object-Methods-------
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
+    public Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
 

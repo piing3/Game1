@@ -9,14 +9,23 @@ import java.awt.Color;
  */
 public class Player extends Actor{
 
+    public static final int TOOL_HAND = 0; 
+    public static final int TOOL_AXE_WOOD = 1; 
+    public static final int TOOL_AXE_STONE = 2; 
+    public static final int TOOL_SWORD_WOOD = 3; 
+    public static final int TOOL_SWORD_STONE = 4; 
+    
     private int wood;
     private int stone;
-    //Tool tool;
+    int tool;
     
     
     public Player(int x, int y) {
         super(x, y, 50, 50);
         setBackground(Color.yellow);
+        tool = 0;
+        wood = 0;
+        stone = 0;
     }
 
     @Override
