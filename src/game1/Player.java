@@ -17,7 +17,7 @@ public class Player extends Actor{
     
     private int wood;
     private int stone;
-    int tool;
+    private int tool;
     
     
     public Player(int x, int y) {
@@ -54,7 +54,13 @@ public class Player extends Actor{
         return true;
     }
 
+    public int getTool() {
+        return tool;
+    }
 
+    public void setTool(int tool) {
+        this.tool = tool;
+    }
 
     //-------Object-Methods------------- 
 

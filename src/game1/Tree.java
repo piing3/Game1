@@ -37,7 +37,29 @@ public class Tree extends Resource{
 
     @Override
     void harvest(Player player) {
-        if (player.tool == Player.)
+        int wood = 0;
+        if(curSize <= 0){
+            System.out.println("Resouce empty!");
+            return;
+        }
+        
+        if (player.getTool() == Player.TOOL_HAND) wood = 1;
+        else if (player.getTool() == Player.TOOL_AXE_WOOD) wood = 2;
+        else if (player.getTool() == Player.TOOL_AXE_STONE) wood = 3;
+        else{
+            System.out.println("Wrong tool!");
+            return;
+        }
+        
+        if(curSize - wood >= 0){
+            curSize -= wood;
+            player.addWood(wood);
+        }
+        else {
+            wood = curSize;
+            curSize = 0;
+            player.addWood(wood);
+        }
     }
 
 
