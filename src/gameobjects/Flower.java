@@ -1,4 +1,4 @@
-package game1;
+package gameobjects;
 
 import javax.swing.ImageIcon;
 
@@ -17,8 +17,9 @@ public class Flower extends Decoration{
     public Flower(int x, int y, int type) {
         super(x, y, 10, 20);
         if (type == TYPE_YELLOW) setGraphic(new ImageIcon("src\\graphics\\flower_yellow"));
-        //if (type == TYPE_YELLOW) graphic = new ImageIcon("src\\graphics\\flower_yellow");
-        //if (type == TYPE_YELLOW) graphic = new ImageIcon("src\\graphics\\flower_yellow");
+        if (type == TYPE_RED) setGraphic(new ImageIcon("src\\graphics\\flower_red"));
+        if (type == TYPE_PURPLE) setGraphic(new ImageIcon("src\\graphics\\flower_purple"));
+        if (type == TYPE_BLUE) setGraphic(new ImageIcon("src\\graphics\\flower_blue"));
     }
 
     //-------Object-Methods------------- 

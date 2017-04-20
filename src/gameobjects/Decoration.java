@@ -1,4 +1,4 @@
-package game1;
+package gameobjects;
 /**
  * Purpose: Non-intractable visual elements (background, flower, tall grass, etc)
  * @author Davin

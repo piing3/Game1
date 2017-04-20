@@ -1,6 +1,6 @@
-package game1;
+package gameobjects;
 
-import static game1.Resource.TYPE_SMALL;
+import static gameobjects.Resource.TYPE_SMALL;
 import javax.swing.ImageIcon;
 
 /**

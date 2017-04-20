@@ -1,4 +1,4 @@
-package game1;
+package gameobjects;
 
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;

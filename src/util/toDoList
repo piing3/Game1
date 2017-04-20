@@ -1,0 +1,24 @@
+Graphics:
+
+-flower_yellow
+-flower_red
+-flower_purple
+-flower_blue
+-background_(#)
+-player
+-stone_small
+-stone_mid
+-stone_large
+-tree_small
+-tree_mid
+-tree_large
+-wolf
+
+Mechanic:
+
+-Combat (weapons, defenses, health, more enemies)
+-Light (fire)
+-Hunger (food, hunting, starving, heath)
+-Cold (fire, health)
+-Crafting (recipes, placement)
+

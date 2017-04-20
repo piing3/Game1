@@ -1,5 +1,6 @@
-package game1;
+package gameobjects;
 
+import game1.InputLogic;
 import java.awt.Component;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -14,6 +15,8 @@ import javax.swing.JFrame;
  */
 class BaseFrame extends JFrame implements KeyListener, MouseListener{
 
+    
+    
     public BaseFrame() {
         this.setLocation(350, 30);
         this.setSize(1280, 1024);
@@ -23,17 +26,17 @@ class BaseFrame extends JFrame implements KeyListener, MouseListener{
     }
 
     public void add(GraphicalElement element) {
-        super.add(element.getElement());
+        this.add(element.getElement());
     }
     
     @Override
     public void keyPressed(KeyEvent e) {
-        //Logic.keyPressed(e);
+        InputLogic.keyPressed(e);
     }
     
     @Override
     public void mouseClicked(MouseEvent e) {
-        //Logic.mouseClicked(e);
+        InputLogic.mouseClicked(e);
     }
     
     
@@ -59,7 +62,7 @@ class BaseFrame extends JFrame implements KeyListener, MouseListener{
     }
 
     
-    
+  
     @Override
     public void keyTyped(KeyEvent e) {}
 

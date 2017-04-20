@@ -1,4 +1,4 @@
-package game1;
+package gameobjects;
 
 import java.awt.Color;
 import java.awt.event.KeyListener;

@@ -1,6 +1,8 @@
-package game1;
+package gameobjects;
 
 import java.awt.Color;
+import javax.swing.ImageIcon;
+import game1.InputLogic;
 
 /**
  * Purpose: 
@@ -22,7 +24,7 @@ public class Player extends Actor{
     
     public Player(int x, int y) {
         super(x, y, 50, 50);
-        setBackground(Color.yellow);
+        setGraphic(new ImageIcon("src\\graphics\\player"));
         tool = 0;
         wood = 0;
         stone = 0;
@@ -30,9 +32,27 @@ public class Player extends Actor{
 
     @Override
     void script() {
-        
+        if(InputLogic.keyInput != null) keyInput();
+        if(InputLogic.mouseInput != null) mouseInput();
     }
 
+    private void keyInput() {
+        if (InputLogic.isDirectionKey()) {
+            if (InputLogic.keyInput.getKeyCode() == 37) move(x, y);
+            if (InputLogic.keyInput.getKeyCode() == 38) move(x, y);
+            if (InputLogic.keyInput.getKeyCode() == 39) move(x, y);
+            if (InputLogic.keyInput.getKeyCode() == 40) move(x, y);
+            InputLogic.keyInput = null;
+        }
+        else if (InputLogic.isNumberKey()){
+            InputLogic.keyInput = null;
+        }
+        else return;;
+        
+    }
+    
+    private void mouseInput() {
+    }
 
     //------Varibles-Methods------------
 

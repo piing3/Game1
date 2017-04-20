@@ -1,4 +1,4 @@
-package game1;
+package gameobjects;
 
 import java.util.ArrayList;
 
@@ -6,7 +6,7 @@ import java.util.ArrayList;
  *
  * @author Davin
  */
-public interface Collision <T extends GraphicalElement>{
+interface Collision <T extends GraphicalElement>{
     
     public boolean checkBoxCollision(T element);
     
