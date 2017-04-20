@@ -1,60 +1,59 @@
 package game1;
 
+import static game1.Resource.TYPE_SMALL;
 import javax.swing.ImageIcon;
 
 /**
- * Purpose: Tree resource
- * @author Davin
+ *
+ * @author d.holmberg
  */
-public class Tree extends Resource{
-    
-    
-    public Tree(int x, int y, int type) {
+public class Stone extends Resource{
+
+    public Stone(int x, int y, int type) {
         super(x, y);
         if (type == TYPE_SMALL) {
             setMaxSize(25);
             setRechargeRate(1);
-            setSize(50, 100);
-            this.setGraphic(new ImageIcon("src\\graphics\\tree_small"));
+            setSize(25, 25);
+            this.setGraphic(new ImageIcon("src\\graphics\\stone_small"));
         }
         if (type == TYPE_MID) {
             setMaxSize(50);
             setRechargeRate(2);
-            setSize(75, 125);
-            this.setGraphic(new ImageIcon("src\\graphics\\tree_mid"));
+            setSize(50, 50);
+            this.setGraphic(new ImageIcon("src\\graphics\\stone_mid"));
         }
         if (type == TYPE_LARGE) {
             setMaxSize(100);
             setRechargeRate(4);
-            setSize(100, 150);
-            this.setGraphic(new ImageIcon("src\\graphics\\tree_large"));
+            setSize(75, 75);
+            this.setGraphic(new ImageIcon("src\\graphics\\stone_large"));
         }
     }
 
     @Override
     void harvest(Player player) {
-        int wood = 0;
+    int stone = 0;
         if(curSize <= 0){
             System.out.println("Resouce empty!");
             return;
         }
         
-        if (player.getTool() == Player.TOOL_HAND) wood = 1;
-        else if (player.getTool() == Player.TOOL_AXE_WOOD) wood = 2;
-        else if (player.getTool() == Player.TOOL_AXE_STONE) wood = 3;
+        else if (player.getTool() == Player.TOOL_AXE_WOOD) stone = 1;
+        else if (player.getTool() == Player.TOOL_AXE_STONE) stone = 2;
         else{
             System.out.println("Wrong tool!");
             return;
         }
         
-        if(curSize - wood >= 0){
-            curSize -= wood;
-            player.addWood(wood);
+        if(curSize - stone >= 0){
+            curSize -= stone;
+            player.addWood(stone);
         }
         else {
-            wood = curSize;
+            stone = curSize;
             curSize = 0;
-            player.addWood(wood);
+            player.addWood(stone);
         }
     }
 
@@ -66,7 +65,7 @@ public class Tree extends Resource{
     //----Object-Methods-------
 
     @Override
-    public Object clone() throws CloneNotSupportedException {
+    public  Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
 
@@ -79,5 +78,6 @@ public class Tree extends Resource{
     public String toString() {
         return super.toString();
     }
+
 
 }

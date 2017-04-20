@@ -12,6 +12,10 @@ import javax.swing.Timer;
  */
 abstract class Resource extends Entity{
 
+    public static final int TYPE_SMALL = 0; 
+    public static final int TYPE_MID = 1; 
+    public static final int TYPE_LARGE = 2;
+    
     protected int maxSize;
     protected int curSize;
     protected int rechargeRate;
@@ -21,8 +25,6 @@ abstract class Resource extends Entity{
     public Resource(int x, int y) {
         super(x, y, 0, 0);
         resources.add(this);
-        
-
         
         ActionListener al = new ActionListener() {
             @Override
