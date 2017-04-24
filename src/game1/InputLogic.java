@@ -25,8 +25,8 @@ public class InputLogic {
     public static final int KEY_9 = 57; 
     public static final int KEY_0 = 58; 
     
-    public static KeyEvent keyInput = null;
-    public static MouseEvent mouseInput = null;
+    private static KeyEvent keyInput = null;
+    private static MouseEvent mouseInput = null;
     
     public static void keyPressed(KeyEvent e) {
         keyInput = e;

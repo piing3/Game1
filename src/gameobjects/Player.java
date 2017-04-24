@@ -1,8 +1,8 @@
 package gameobjects;
 
-import java.awt.Color;
 import javax.swing.ImageIcon;
-import game1.InputLogic;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
 
 /**
  * Purpose: 
@@ -21,6 +21,8 @@ public class Player extends Actor{
     private int stone;
     private int tool;
     
+    private KeyEvent keyInput = null;
+    private MouseEvent mouseInput = null;
     
     public Player(int x, int y) {
         super(x, y, 50, 50);
@@ -32,23 +34,27 @@ public class Player extends Actor{
 
     @Override
     void script() {
-        if(InputLogic.keyInput != null) keyInput();
-        if(InputLogic.mouseInput != null) mouseInput();
+        if(keyInput != null) keyInput();
+        if(mouseInput != null) mouseInput();
     }
 
     private void keyInput() {
-        if (InputLogic.isDirectionKey()) {
-            if (InputLogic.keyInput.getKeyCode() == 37) move(x, y);
-            if (InputLogic.keyInput.getKeyCode() == 38) move(x, y);
-            if (InputLogic.keyInput.getKeyCode() == 39) move(x, y);
-            if (InputLogic.keyInput.getKeyCode() == 40) move(x, y);
-            InputLogic.keyInput = null;
+        if (keyInput.getKeyCode() == 37){
+            move(x, y);
+            keyInput = null;
         }
-        else if (InputLogic.isNumberKey()){
-            InputLogic.keyInput = null;
+        if (keyInput.getKeyCode() == 38){
+            move(x, y);
+            keyInput = null;
         }
-        else return;;
-        
+        if (keyInput.getKeyCode() == 39){
+            move(x, y);
+            keyInput = null;
+        }
+        if (keyInput.getKeyCode() == 40){
+            move(x, y);
+            keyInput = null;
+        }
     }
     
     private void mouseInput() {
