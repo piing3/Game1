@@ -25,18 +25,18 @@ public class InputLogic {
     public static final int KEY_9 = 57; 
     public static final int KEY_0 = 58; 
     
-    private static KeyEvent keyInput = null;
-    private static MouseEvent mouseInput = null;
+    public KeyEvent keyInput = null;
+    public MouseEvent mouseInput = null;
     
-    public static void keyPressed(KeyEvent e) {
+    public void keyPressed(KeyEvent e) {
         keyInput = e;
     }
 
-    public static void mouseClicked(MouseEvent e) {
+    public void mouseClicked(MouseEvent e) {
         mouseInput = e;
     }
     
-    public static boolean isDirectionKey(){
+    public boolean isDirectionKey(){
         if (keyInput.getKeyCode() == KEY_LEFT) return true;
         else if (keyInput.getKeyCode() == KEY_UP) return true;
         else if (keyInput.getKeyCode() == KEY_RIGHT) return true;
@@ -44,7 +44,7 @@ public class InputLogic {
         else return false;
     }
     
-    public static boolean isNumberKey(){
+    public boolean isNumberKey(){
         if (keyInput.getKeyCode() == KEY_1) return true;
         else if (keyInput.getKeyCode() == KEY_2) return true;
         else if (keyInput.getKeyCode() == KEY_3) return true;

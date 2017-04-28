@@ -1,5 +1,6 @@
 package gameobjects;
 
+import game1.InputLogic;
 import javax.swing.ImageIcon;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
@@ -21,39 +22,39 @@ public class Player extends Actor{
     private int stone;
     private int tool;
     
-    private KeyEvent keyInput = null;
-    private MouseEvent mouseInput = null;
+    private InputLogic inputLogic = null;
     
-    public Player(int x, int y) {
+    public Player(int x, int y, InputLogic inputLogic) {
         super(x, y, 50, 50);
         setGraphic(new ImageIcon("src\\graphics\\player"));
         tool = 0;
         wood = 0;
         stone = 0;
+        this.inputLogic = inputLogic;
     }
 
     @Override
     void script() {
-        if(keyInput != null) keyInput();
-        if(mouseInput != null) mouseInput();
+        if(inputLogic.keyInput != null) keyInput();
+        if(inputLogic.mouseInput != null) mouseInput();
     }
 
     private void keyInput() {
-        if (keyInput.getKeyCode() == 37){
-            move(x, y);
-            keyInput = null;
+        if (inputLogic.keyInput.getKeyCode() == 37){
+            move(-5, 0);
+            inputLogic.keyInput = null;
         }
-        if (keyInput.getKeyCode() == 38){
-            move(x, y);
-            keyInput = null;
+        if (inputLogic.keyInput.getKeyCode() == 38){
+            move(0, 5);
+            inputLogic.keyInput = null;
         }
-        if (keyInput.getKeyCode() == 39){
-            move(x, y);
-            keyInput = null;
+        if (inputLogic.keyInput.getKeyCode() == 39){
+            move(5, 0);
+            inputLogic.keyInput = null;
         }
-        if (keyInput.getKeyCode() == 40){
-            move(x, y);
-            keyInput = null;
+        if (inputLogic.keyInput.getKeyCode() == 40){
+            move(0, -5);
+            inputLogic.keyInput = null;
         }
     }
     

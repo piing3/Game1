@@ -1,11 +1,11 @@
 package gameobjects;
 
 import game1.InputLogic;
-import java.awt.Component;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 import javax.swing.JFrame;
 
 /**
@@ -15,7 +15,7 @@ import javax.swing.JFrame;
  */
 class BaseFrame extends JFrame implements KeyListener, MouseListener{
 
-    
+    ArrayList<InputLogic> inputs = new ArrayList<>();
     
     public BaseFrame() {
         this.setLocation(350, 30);
@@ -31,12 +31,16 @@ class BaseFrame extends JFrame implements KeyListener, MouseListener{
     
     @Override
     public void keyPressed(KeyEvent e) {
-        InputLogic.keyPressed(e);
+        for (int i = 0; i < inputs.size(); i++) {            
+            inputs.get(i).keyPressed(e);
+        }
     }
     
     @Override
     public void mouseClicked(MouseEvent e) {
-        InputLogic.mouseClicked(e);
+        for (int i = 0; i < inputs.size(); i++) {            
+            inputs.get(i).mouseClicked(e);
+        }
     }
     
     
