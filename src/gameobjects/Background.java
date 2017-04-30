@@ -16,7 +16,7 @@ public class Background extends Decoration{
      */
     public Background(int x, int y, String section) {
         super(x, y, 1000, 1000);
-        setGraphic(new ImageIcon("src\\graphics\\background_"+section));
+        setGraphic(new ImageIcon("src\\graphics\\background_"+section+".png"));
     }
 
 

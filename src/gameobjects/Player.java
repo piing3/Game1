@@ -24,19 +24,22 @@ public class Player extends Actor{
     
     private InputLogic inputLogic = null;
     
-    public Player(int x, int y, InputLogic inputLogic) {
+    public Player(int x, int y) {
         super(x, y, 50, 50);
-        setGraphic(new ImageIcon("src\\graphics\\player"));
+        setGraphic(new ImageIcon("src\\graphics\\player.png"));
         tool = 0;
         wood = 0;
         stone = 0;
-        this.inputLogic = inputLogic;
+        this.inputLogic = new InputLogic();
+        baseFrame.addInputLogic(inputLogic);
     }
 
     @Override
     void script() {
-        if(inputLogic.keyInput != null) keyInput();
-        if(inputLogic.mouseInput != null) mouseInput();
+        if(inputLogic != null){
+            if(inputLogic.keyInput != null) keyInput();
+            if(inputLogic.mouseInput != null) mouseInput();
+        }
     }
 
     private void keyInput() {
@@ -87,6 +90,10 @@ public class Player extends Actor{
 
     public void setTool(int tool) {
         this.tool = tool;
+    }
+    
+    public void setInputLogic(InputLogic inputLogic){
+        this.inputLogic = inputLogic;
     }
 
     //-------Object-Methods------------- 

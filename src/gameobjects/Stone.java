@@ -15,19 +15,19 @@ public class Stone extends Resource{
             setMaxSize(25);
             setRechargeRate(1);
             setSize(25, 25);
-            this.setGraphic(new ImageIcon("src\\graphics\\stone_small"));
+            this.setGraphic(new ImageIcon("src\\graphics\\stone_small.png"));
         }
         if (type == TYPE_MID) {
             setMaxSize(50);
             setRechargeRate(2);
             setSize(50, 50);
-            this.setGraphic(new ImageIcon("src\\graphics\\stone_mid"));
+            this.setGraphic(new ImageIcon("src\\graphics\\stone_mid.png"));
         }
         if (type == TYPE_LARGE) {
             setMaxSize(100);
             setRechargeRate(4);
             setSize(75, 75);
-            this.setGraphic(new ImageIcon("src\\graphics\\stone_large"));
+            this.setGraphic(new ImageIcon("src\\graphics\\stone_large.png"));
         }
     }
 

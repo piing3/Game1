@@ -13,7 +13,7 @@ import javax.swing.JPanel;
  */
 abstract class GraphicalElement{
 
-    protected BaseFrame baseFrame = new BaseFrame();
+    protected static BaseFrame baseFrame = new BaseFrame();
     
     protected int x;
     protected int y;
@@ -40,8 +40,13 @@ abstract class GraphicalElement{
         this.height = height;
         
         element = new JPanel();
+        element.setLayout(null);
         element.setBounds(x, y, width, height);        
         baseFrame.add(element);
+        
+        image = new JLabel();
+        image.setBounds(0, 0, width, height);
+        element.add(image);
     }
 
     public JPanel getElement() {

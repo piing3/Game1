@@ -15,7 +15,7 @@ import javax.swing.JFrame;
  */
 class BaseFrame extends JFrame implements KeyListener, MouseListener{
 
-    ArrayList<InputLogic> inputs = new ArrayList<>();
+    private ArrayList<InputLogic> inputs = new ArrayList<>();
     
     public BaseFrame() {
         this.setLocation(350, 30);
@@ -46,6 +46,9 @@ class BaseFrame extends JFrame implements KeyListener, MouseListener{
     
     //------Varibles-Methods------------
 
+    protected void addInputLogic(InputLogic inputLogic){
+        inputs.add(inputLogic);
+    }
 
 
     //-------Object-Methods------------- 

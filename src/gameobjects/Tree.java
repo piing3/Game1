@@ -15,19 +15,19 @@ public class Tree extends Resource{
             setMaxSize(25);
             setRechargeRate(1);
             setSize(50, 100);
-            this.setGraphic(new ImageIcon("src\\graphics\\tree_small"));
+            this.setGraphic(new ImageIcon("src\\graphics\\tree_small.png"));
         }
         if (type == TYPE_MID) {
             setMaxSize(50);
             setRechargeRate(2);
             setSize(75, 125);
-            this.setGraphic(new ImageIcon("src\\graphics\\tree_mid"));
+            this.setGraphic(new ImageIcon("src\\graphics\\tree_mid.png"));
         }
         if (type == TYPE_LARGE) {
             setMaxSize(100);
             setRechargeRate(4);
             setSize(100, 150);
-            this.setGraphic(new ImageIcon("src\\graphics\\tree_large"));
+            this.setGraphic(new ImageIcon("src\\graphics\\tree_large.png"));
         }
     }
 

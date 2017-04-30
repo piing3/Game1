@@ -9,8 +9,8 @@ import javax.swing.ImageIcon;
 public class Wolf extends Actor{
 
     public Wolf(int x, int y) {
-        super(x, y, 60, 60);
-        setGraphic(new ImageIcon("src\\graphics\\wolf"));
+        super(x, y, 75, 150);
+        setGraphic(new ImageIcon("src\\graphics\\wolf.png"));
     }
 
     @Override
